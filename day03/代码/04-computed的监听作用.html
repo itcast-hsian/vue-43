@@ -12,8 +12,6 @@
         + 
         <input type="text" v-model="last">
         = {{ result }}
-        
-        <button @click="handleClick">确定</button>
     </div>
     <script>
         var app = new Vue({
@@ -21,12 +19,6 @@
             data: {
                first: 1,
                last: 2,
-            },
-            methods: {
-                // 测试的点击事件
-                handleClick(){
-                    alert(123);
-                }
             },
             // 计算属性,可以访问this
             computed: {

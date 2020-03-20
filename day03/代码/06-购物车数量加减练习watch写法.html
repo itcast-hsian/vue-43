@@ -22,17 +22,20 @@
             data: {
                 price: 10, // 单价
                 number: 1, // 数量
-                result: this.price * this.number
-            },
-            computed: {
-                // 总价
-                result(){
-                    return this.price * this.number;
-                }
+                result: 10 // 这个值应该通过计算得到，不应该直接声明
             },
             methods: {
+                // 数量加1
                 handleAdd(){
                     this.number++;
+                    // this.result = this.price * this.number;
+                }
+            },
+            watch: {
+                // 监听number属性的变化
+                number(){
+                    // 得到总价
+                    this.result = this.price * this.number;
                 }
             }
         })
